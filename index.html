@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Smokey the Bear Fire Danger</title>
+    <meta name="description" content="Current fire danger for SLO County">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="index.js"></script>
+  </head>
+  <body>
+      <h1>Today's Fire Danger</h1>
+      <div id="content">
+          <button id="low" onclick="low()">Low</button>
+          <button id="moderate" onclick="moderate()">Moderate</button>
+          <button id="high" onclick="high()">High</button>
+          <button id="veryhigh" onclick="veryhigh()">Very High</button>
+          <button id="extreme" onclick="extreme()">Extreme</button>
+      </div>
+      <br /><br />
+      <div>
+        <img id="smokey" src="/img/extreme.png"/>
+      </div>
+  </body>
+</html>
