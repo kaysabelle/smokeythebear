@@ -44,7 +44,7 @@ function getstatus_lastablas() { //44904
 	var today = getTodaysDate();
 	var stn = "44904";
 
-	site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn='+ stn + '&start=' + today + '&end=' + today + '';
+	var site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn='+ stn + '&start=' + today + '&end=' + today + '';
 	//var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
 
 	$.ajax({
