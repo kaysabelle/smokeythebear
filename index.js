@@ -22,14 +22,14 @@ function getstatus_lapanza() { //44905
 }
 
 function getstatus_lastablas() { //44904
-	site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&sig=&type=&start=18-MAR-15&end=18-MAR-15&time=&user=4e1&priority=';
+	site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&start=18-MAR-15&end=18-MAR-15';
 	var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
 	console.log("about to call...");
 
 	$.ajax({
 	  crossOrigin: true,
 	  url: site,
-	  //proxy: "./proxy.php", /* REPLACE THIS!
+	  proxy: "http://smokeyproxyserver.appspot.com/",
 	  context: {},
 	  success: function(data) {
 	  	console.log("SUCCESS");
@@ -40,7 +40,7 @@ function getstatus_lastablas() { //44904
 	  	console.log(data);
 	  }
 	});
-	console.log("now what?");
+	console.log("finished getting status. now what?");
 }
 
 function getstatus_arroyogrande() { //44915
@@ -76,6 +76,27 @@ function calc_rating(sl, ic) {
 	var ic_result = getICIndex(ic);
 	var rating_result = rating_matrix[sl-1][ic_result];
 
-	console.log("RESULT IS!!!");
+	console.log("RATING BELOW:");
 	console.log(rating_result);
+
+	switch(rating_result) {
+		case 'L':
+			low();
+			break;
+		case 'M':
+			moderate();
+			break;
+		case 'H':
+			high();
+			break;
+		case 'V':
+			veryhigh();
+			break;
+		case 'E':
+			extreme();
+			break;
+		default:
+			console.log("Something went wrong\n");
+			break;
+	}
 }
