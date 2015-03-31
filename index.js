@@ -18,13 +18,34 @@ function extreme() {
 	$('#smokey').attr('src', './img/extreme.png');
 }
 
+function getTodaysDate() {
+	var today = new Date();
+
+	// get the 2-character date
+	var today_day = today.getDate();
+	if (today_day < 10) {
+		today_day = '0' + today_day;
+	}
+
+	// get the 3-character month
+	var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+	var today_month = months[today.getMonth()];
+
+	var today_year = today.getFullYear().toString().substring(2, 4);
+
+	return today_day + "-" + today_month + "-" + today_year;
+}
+
 function getstatus_lapanza() { //44905
+	var stn = "44905";
 }
 
 function getstatus_lastablas() { //44904
-	site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&start=18-MAR-15&end=18-MAR-15';
-	var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
-	console.log("about to call...");
+	var today = getTodaysDate();
+	var stn = "44904";
+
+	site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn='+ stn + '&start=' + today + '&end=' + today + '';
+	//var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
 
 	$.ajax({
 	  crossOrigin: true,
@@ -36,7 +57,7 @@ function getstatus_lastablas() { //44904
 		console.log(data);
 	  },
 	  failure: function(data) {
-	  	console.log("FAILED");
+	  	console.log("FAILURE");
 	  	console.log(data);
 	  }
 	});
@@ -44,7 +65,7 @@ function getstatus_lastablas() { //44904
 }
 
 function getstatus_arroyogrande() { //44915
-
+	var stn = "44915";
 }
 
 function getICIndex(ic) {
