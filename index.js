@@ -17,3 +17,65 @@ function veryhigh() {
 function extreme() {
 	$('#smokey').attr('src', './img/extreme.png');
 }
+
+function getstatus_lapanza() { //44905
+}
+
+function getstatus_lastablas() { //44904
+	site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&sig=&type=&start=18-MAR-15&end=18-MAR-15&time=&user=4e1&priority=';
+	var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
+	console.log("about to call...");
+
+	$.ajax({
+	  crossOrigin: true,
+	  url: site,
+	  //proxy: "./proxy.php", /* REPLACE THIS!
+	  context: {},
+	  success: function(data) {
+	  	console.log("SUCCESS");
+		console.log(data);
+	  },
+	  failure: function(data) {
+	  	console.log("FAILED");
+	  	console.log(data);
+	  }
+	});
+	console.log("now what?");
+}
+
+function getstatus_arroyogrande() { //44915
+
+}
+
+function getICIndex(ic) {
+	if (ic >= 0 && ic <= 20) {
+		return 0;
+	}
+	else if (ic >= 21 && ic <=45) {
+		return 1;
+	}
+	else if (ic >= 46 && ic <= 65) {
+		return 2;
+	}
+	else if (ic >= 66 && ic <= 80) {
+		return 3;
+	}
+	else {
+		return 4;
+	}
+}
+
+function calc_rating(sl, ic) {
+	var rating_matrix = [
+		['L', 'L', 'L', 'M', 'M'],
+		['L', 'M', 'M', 'M', 'H'],
+		['M', 'M', 'H', 'H', 'V'],
+		['M', 'H', 'V', 'V', 'E'],
+		['H', 'V', 'V', 'E', 'E']];
+	
+	var ic_result = getICIndex(ic);
+	var rating_result = rating_matrix[sl-1][ic_result];
+
+	console.log("RESULT IS!!!");
+	console.log(rating_result);
+}
