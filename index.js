@@ -41,7 +41,32 @@ function getstatus_lapanza() { //44905
 }
 
 function getstatus_lastablas() { //44904
-	var today = getTodaysDate();
+	//sample site that returns xml
+	var myXML = ""
+	document.domain="https://fam.nwcg.gov";
+	var request = new XMLHttpRequest();
+	request.open("GET", "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&sig=&type=&start=18-MAR-15&end=18-MAR-15&time=&user=4e1&priority=", true);
+	request.onreadystatechange = function(){
+	    if (request.readyState == 4) {
+	        if (request.status == 200 || request.status == 0) {
+	            myXML = request.responseXML;
+	        }
+	    }
+	}
+	request.send();
+
+	console.log(myXML);
+	/*$.ajax({
+		  url: './proxy2.php',
+		  success: function(data) {
+		    $('#data').html(data);
+		  }
+	});*/
+	/*$("#data").load("./proxy2.php", function(){
+	  // Some callback functions
+	  
+	});*/
+	/*var today = getTodaysDate();
 	var stn = "44904";
 
 	var site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn='+ stn + '&start=' + today + '&end=' + today + '';
@@ -61,7 +86,7 @@ function getstatus_lastablas() { //44904
 	  	console.log(data);
 	  }
 	});
-	console.log("finished getting status. now what?");
+	console.log("finished getting status. now what?");*/
 }
 
 function getstatus_arroyogrande() { //44915
