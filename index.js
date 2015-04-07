@@ -42,20 +42,6 @@ function getstatus_lapanza() { //44905
 
 function getstatus_lastablas() { //44904
 	//sample site that returns xml
-	var myXML = ""
-	document.domain="https://fam.nwcg.gov";
-	var request = new XMLHttpRequest();
-	request.open("GET", "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&sig=&type=&start=18-MAR-15&end=18-MAR-15&time=&user=4e1&priority=", true);
-	request.onreadystatechange = function(){
-	    if (request.readyState == 4) {
-	        if (request.status == 200 || request.status == 0) {
-	            myXML = request.responseXML;
-	        }
-	    }
-	}
-	request.send();
-
-	console.log(myXML);
 	/*$.ajax({
 		  url: './proxy2.php',
 		  success: function(data) {
