@@ -18,6 +18,18 @@ function extreme() {
 	$('#smokey').attr('src', './img/extreme.png');
 }
 
+$('#getstatus').click(function(){
+	console.log("TEST");
+    $.ajax({          
+            type:  'GET',
+            url:   'proxy2.php',
+            dataType: 'xml',              
+            success: function(xml){
+                alert('aaaaa');
+            }
+         });
+  });
+
 function getTodaysDate() {
 	var today = new Date();
 
@@ -41,38 +53,34 @@ function getstatus_lapanza() { //44905
 }
 
 function getstatus_lastablas() { //44904
-	//sample site that returns xml
-	/*$.ajax({
-		  url: './proxy2.php',
-		  success: function(data) {
-		    $('#data').html(data);
-		  }
-	});*/
-	/*$("#data").load("./proxy2.php", function(){
-	  // Some callback functions
-	  
-	});*/
-	/*var today = getTodaysDate();
+	var today = getTodaysDate();
 	var stn = "44904";
 
 	var site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn='+ stn + '&start=' + today + '&end=' + today + '';
 	//var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
 
-	$.ajax({
+	/*$.ajax({
 	  crossOrigin: true,
 	  url: site,
 	  proxy: "http://smokeyproxyserver.appspot.com/",
 	  context: {},
 	  success: function(data) {
-	  	console.log("SUCCESS");
+	  	alert("SUCCESS");
 		console.log(data);
 	  },
 	  failure: function(data) {
-	  	console.log("FAILURE");
+	  	alert("FAILURE");
 	  	console.log(data);
 	  }
+	});*/
+	$.ajax({
+	    url: site,
+	    type: 'GET',
+	    success: function(res) {
+	        console.log(res);
+	    }
 	});
-	console.log("finished getting status. now what?");*/
+	console.log("finished getting status. now what?");
 }
 
 function getstatus_arroyogrande() { //44915

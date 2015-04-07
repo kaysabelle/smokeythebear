@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/index.css">
 
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <!--script src="jquery.xdomainajax.js"></script-->
-    <!--script src="jquery.ajax-cross-origin.min.js"></script-->
-
+    <script src="jquery.xdomainajax.js"></script>
     <script src="index.js"></script>
   </head>
   <body>
@@ -21,7 +19,7 @@
           <button id="high" onclick="high()">High</button>
           <button id="veryhigh" onclick="veryhigh()">Very High</button>
           <button id="extreme" onclick="extreme()">Extreme</button>
-          <button id="getstatus" onclick="getstatus_lastablas()">GET THE STATUS</button>
+          <!--button id="getstatus" onclick="getstatus_lastablas()">GET THE STATUS</button-->
       </div>
       <br /><br />
       <div>
@@ -31,41 +29,5 @@
       <div id="data">
         
       </div>
-        <script type="text/javascript">
-$(function() {
-  $( '#getstatus' ).click(function(){
-    var url = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&sig=&type=&start=18-MAR-15&end=18-MAR-15&time=&user=4e1&priority=';
-    
-    $.ajax({
-      crossOrigin: true,
-      url: url,
-      proxy: "proxy3.php", //use local proxy because Google limits the use of Google Apps Script
-      //dataType: "json", //no need. if you use crossOrigin, the dataType will be override with "json"
-      //charset: 'ISO-8859-1', //use it to define the charset of the target url
-      context: {},
-      success: function(data) {
-        //alert(data);
-        $( '#data' ).html(data);
-      }
-    })
-    .done(function( data, textStatus, jqXHR ) {
-      //alert(data);
-    });
-  });
-  
-/*########################################################
-  before the use of $.getJSON you need to set {crossOrigin: true} through $.ajaxSetup
-  
-  $.ajaxSetup({
-    crossOrigin: true
-  });
-  
-  $.getJSON(url, null, function(data) {
-    $( '#test' ).html(data);
-  });
-########################################################*/
-  
-}); 
-      </script>
   </body>
 </html>
