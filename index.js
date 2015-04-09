@@ -1,36 +1,88 @@
-function low() {
-	$('#smokey').attr('src', './img/low.png');
+function init() {
+	getstatus_lapanza();
+	getstatus_lastablas();
+	getstatus_arroyogrande();
 }
 
-function moderate() {
-	$('#smokey').attr('src', './img/moderate.png');
+function low(stationId) {
+	$('#smokey' + stationId).attr('src', './img/low.png');
 }
 
-function high() {
-	$('#smokey').attr('src', './img/high.png');
+function moderate(stationId) {
+	$('#smokey' + stationId).attr('src', './img/moderate.png');
 }
 
-function veryhigh() {
-	$('#smokey').attr('src', './img/veryhigh.png');
+function high(stationId) {
+	$('#smokey' + stationId).attr('src', './img/high.png');
 }
 
-function extreme() {
-	$('#smokey').attr('src', './img/extreme.png');
+function veryhigh(stationId) {
+	$('#smokey' + stationId).attr('src', './img/veryhigh.png');
 }
 
-$('#getstatus').click(function(){
-	console.log("TEST");
-    $.ajax({          
-            type:  'GET',
-            url:   'proxy2.php',
-            dataType: 'xml',              
-            success: function(xml){
-                alert('aaaaa');
-            }
-         });
-  });
+function extreme(stationId) {
+	$('#smokey' + stationId).attr('src', './img/extreme.png');
+}
 
-function getTodaysDate() {
+/*function getstatus() {
+	// USE msgc=7G3A2, nfdr_type O
+	jQuery.get('data.xml', function(data) {
+    	var jsonified = xmlToJson(data);
+    	//console.log(jsonified);
+    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+    		var curEntry = jsonified.nfdrs.row[i];
+    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text']);
+    			console.log("Smokey's Adjective Fire Danger Rating is up to date.");
+    			break;
+    		}
+    	}
+    	if (i == jsonified.nfdrs.row.length) {
+    		console.log("The Adjective Fire Danger Rating has not yet been updated today.");
+    	}
+	});
+}*/
+
+// Changes XML to JSON
+function xmlToJson(xml) {
+	
+	// Create the return object
+	var obj = {};
+
+	if (xml.nodeType == 1) { // element
+		// do attributes
+		if (xml.attributes.length > 0) {
+		obj["@attributes"] = {};
+			for (var j = 0; j < xml.attributes.length; j++) {
+				var attribute = xml.attributes.item(j);
+				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+			}
+		}
+	} else if (xml.nodeType == 3) { // text
+		obj = xml.nodeValue;
+	}
+
+	// do children
+	if (xml.hasChildNodes()) {
+		for(var i = 0; i < xml.childNodes.length; i++) {
+			var item = xml.childNodes.item(i);
+			var nodeName = item.nodeName;
+			if (typeof(obj[nodeName]) == "undefined") {
+				obj[nodeName] = xmlToJson(item);
+			} else {
+				if (typeof(obj[nodeName].push) == "undefined") {
+					var old = obj[nodeName];
+					obj[nodeName] = [];
+					obj[nodeName].push(old);
+				}
+				obj[nodeName].push(xmlToJson(item));
+			}
+		}
+	}
+	return obj;
+};
+
+/*function getTodaysDate() {
 	var today = new Date();
 
 	// get the 2-character date
@@ -46,45 +98,63 @@ function getTodaysDate() {
 	var today_year = today.getFullYear().toString().substring(2, 4);
 
 	return today_day + "-" + today_month + "-" + today_year;
-}
+}*/
 
 function getstatus_lapanza() { //44905
-	var stn = "44905";
+	jQuery.get('lapanza.xml', function(data) {
+    	var jsonified = xmlToJson(data);
+    	//console.log(jsonified);
+    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+    		var curEntry = jsonified.nfdrs.row[i];
+    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'LP');
+    			console.log("Smokey's Adjective Fire Danger Rating for La Panza is up to date.");
+    			break;
+    		}
+    	}
+    	if (i == jsonified.nfdrs.row.length) {
+    		console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
+    	}
+	});
+	console.log("updated status for La Panza");
 }
 
 function getstatus_lastablas() { //44904
-	var today = getTodaysDate();
-	var stn = "44904";
-
-	var site = 'https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn='+ stn + '&start=' + today + '&end=' + today + '';
-	//var yql = 'http://query.yahooapis.com/v1/public/yql?callback=?';
-
-	/*$.ajax({
-	  crossOrigin: true,
-	  url: site,
-	  proxy: "http://smokeyproxyserver.appspot.com/",
-	  context: {},
-	  success: function(data) {
-	  	alert("SUCCESS");
-		console.log(data);
-	  },
-	  failure: function(data) {
-	  	alert("FAILURE");
-	  	console.log(data);
-	  }
-	});*/
-	$.ajax({
-	    url: site,
-	    type: 'GET',
-	    success: function(res) {
-	        console.log(res);
-	    }
+	jQuery.get('lastablas.xml', function(data) {
+    	var jsonified = xmlToJson(data);
+    	//console.log(jsonified);
+    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+    		var curEntry = jsonified.nfdrs.row[i];
+    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'LT');
+    			console.log("Smokey's Adjective Fire Danger Rating for Las Tablas is up to date.");
+    			break;
+    		}
+    	}
+    	if (i == jsonified.nfdrs.row.length) {
+    		console.log("The Adjective Fire Danger Rating for Las Tablas has not yet been updated today.");
+    	}
 	});
-	console.log("finished getting status. now what?");
+	console.log("updated status for Las Tablas");
 }
 
 function getstatus_arroyogrande() { //44915
-	var stn = "44915";
+	jQuery.get('arroyogrande.xml', function(data) {
+    	var jsonified = xmlToJson(data);
+    	//console.log(jsonified);
+    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+    		var curEntry = jsonified.nfdrs.row[i];
+    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'AG');
+    			console.log("Smokey's Adjective Fire Danger Rating for Arroyo Grande is up to date.");
+    			break;
+    		}
+    	}
+    	if (i == jsonified.nfdrs.row.length) {
+    		console.log("The Adjective Fire Danger Rating for Arroyo Grande has not yet been updated today.");
+    	}
+	});
+	console.log("updated status for Arroyo Grande");
 }
 
 function getICIndex(ic) {
@@ -105,7 +175,7 @@ function getICIndex(ic) {
 	}
 }
 
-function calc_rating(sl, ic) {
+function calc_rating(sl, ic, id) {
 	var rating_matrix = [
 		['L', 'L', 'L', 'M', 'M'],
 		['L', 'M', 'M', 'M', 'H'],
@@ -121,19 +191,19 @@ function calc_rating(sl, ic) {
 
 	switch(rating_result) {
 		case 'L':
-			low();
+			low(id);
 			break;
 		case 'M':
-			moderate();
+			moderate(id);
 			break;
 		case 'H':
-			high();
+			high(id);
 			break;
 		case 'V':
-			veryhigh();
+			veryhigh(id);
 			break;
 		case 'E':
-			extreme();
+			extreme(id);
 			break;
 		default:
 			console.log("Something went wrong\n");

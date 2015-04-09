@@ -2,6 +2,17 @@ body {
 	text-align: center;
 }
 
-#smokey {
+.smokey {
 	width: 300px;
+}
+
+#threestations {
+	width: 100%;
+}
+
+.onethird {
+	text-align: center;
+	float:left;
+	display: inline;
+	width: 33%;
 }

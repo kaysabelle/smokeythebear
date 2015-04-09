@@ -8,26 +8,39 @@
     <link rel="stylesheet" href="css/index.css">
 
     <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script src="jquery.xdomainajax.js"></script>
     <script src="index.js"></script>
   </head>
-  <body>
+  
+  <body onload="init()">
       <h1>Today's Fire Danger</h1>
-      <div id="content">
+      <div id="threestations" style="clear:both; width: 100%;">
+
+        <div id="div_lt" class="onethird">
+          <h2>Las Tablas</h2>
+          <img id="smokeyLT" class="smokey" src="./img/low.png"/>
+        </div>
+
+        <div id="div_lp" class="onethird">
+          <h2>La Panza</h2>
+          <img id="smokeyLP" class="smokey" src="./img/low.png"/>
+        </div>
+
+        <div id="div_ag" class="onethird">
+          <h2>Arroyo Grande</h2>
+          <img id="smokeyAG" class="smokey" src="./img/low.png"/>
+        </div>
+
+      </div>
+      <!--div id="content">
           <button id="low" onclick="low()">Low</button>
           <button id="moderate" onclick="moderate()">Moderate</button>
           <button id="high" onclick="high()">High</button>
           <button id="veryhigh" onclick="veryhigh()">Very High</button>
           <button id="extreme" onclick="extreme()">Extreme</button>
-          <!--button id="getstatus" onclick="getstatus_lastablas()">GET THE STATUS</button-->
-      </div>
-      <br /><br />
-      <div>
-        <img id="smokey" src="./img/extreme.png"/>
-      </div>
-
-      <div id="data">
-        
-      </div>
+          <button id="getstatus" onclick="getstatus()">GET THE STATUS</button>
+      </div-->
+      <!--div>
+        <img id="smokey" src="./img/low.png"/>
+      </div-->
   </body>
 </html>
