@@ -101,7 +101,7 @@ function xmlToJson(xml) {
 }*/
 
 function getstatus_lapanza() { //44905
-	jQuery.get('lapanza.xml', function(data) {
+	jQuery.get('./xml/lapanza.xml', function(data) {
     	var jsonified = xmlToJson(data);
     	//console.log(jsonified);
     	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
@@ -120,7 +120,7 @@ function getstatus_lapanza() { //44905
 }
 
 function getstatus_lastablas() { //44904
-	jQuery.get('lastablas.xml', function(data) {
+	jQuery.get('./xml/lastablas.xml', function(data) {
     	var jsonified = xmlToJson(data);
     	//console.log(jsonified);
     	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
@@ -139,7 +139,7 @@ function getstatus_lastablas() { //44904
 }
 
 function getstatus_arroyogrande() { //44915
-	jQuery.get('arroyogrande.xml', function(data) {
+	jQuery.get('./xml/arroyogrande.xml', function(data) {
     	var jsonified = xmlToJson(data);
     	//console.log(jsonified);
     	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
