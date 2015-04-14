@@ -103,58 +103,68 @@ function xmlToJson(xml) {
 function getstatus_lapanza() { //44905
 	jQuery.get('./xml/lapanza.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	//console.log(jsonified);
-    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
-    		var curEntry = jsonified.nfdrs.row[i];
-    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
-    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'LP');
-    			console.log("Smokey's Adjective Fire Danger Rating for La Panza is up to date.");
-    			break;
+    	if ("nfdrs.row" in jsonified) {
+    		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+	    		var curEntry = jsonified.nfdrs.row[i];
+	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+	    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'LP');
+	    			console.log("Smokey's Adjective Fire Danger Rating for La Panza is up to date.");
+	    			break;
+	    		}
+	    	}
+	    	if (i == jsonified.nfdrs.row.length) {
+	    		console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
     		}
-    	}
-    	if (i == jsonified.nfdrs.row.length) {
+    	}    	
+    	else {
     		console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
     	}
 	});
-	console.log("updated status for La Panza");
 }
 
 function getstatus_lastablas() { //44904
 	jQuery.get('./xml/lastablas.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	//console.log(jsonified);
-    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
-    		var curEntry = jsonified.nfdrs.row[i];
-    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
-    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'LT');
-    			console.log("Smokey's Adjective Fire Danger Rating for Las Tablas is up to date.");
-    			break;
-    		}
+    	if ("nfdrs.row" in jsonified) {
+    		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+	    		var curEntry = jsonified.nfdrs.row[i];
+	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+	    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'LT');
+	    			console.log("Smokey's Adjective Fire Danger Rating for Las Tablas is up to date.");
+	    			break;
+	    		}
+	    	}
+	    	if (i == jsonified.nfdrs.row.length) {
+	    		console.log("The Adjective Fire Danger Rating for Las Tablas has not yet been updated today.");
+	    	}
     	}
-    	if (i == jsonified.nfdrs.row.length) {
+    	else {
     		console.log("The Adjective Fire Danger Rating for Las Tablas has not yet been updated today.");
     	}
 	});
-	console.log("updated status for Las Tablas");
 }
 
 function getstatus_arroyogrande() { //44915
 	jQuery.get('./xml/arroyogrande.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	//console.log(jsonified);
-    	for (var i=0; i<jsonified.nfdrs.row.length; i++) {
-    		var curEntry = jsonified.nfdrs.row[i];
-    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
-    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'AG');
-    			console.log("Smokey's Adjective Fire Danger Rating for Arroyo Grande is up to date.");
-    			break;
-    		}
+    	if ("nfdrs.row" in jsonified) {
+    		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
+	    		var curEntry = jsonified.nfdrs.row[i];
+	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+	    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'AG');
+	    			console.log("Smokey's Adjective Fire Danger Rating for Arroyo Grande is up to date.");
+	    			break;
+	    		}
+	    	}
+	    	if (i == jsonified.nfdrs.row.length) {
+	    		console.log("The Adjective Fire Danger Rating for Arroyo Grande has not yet been updated today.");
+	    	}
     	}
-    	if (i == jsonified.nfdrs.row.length) {
+    	else {
     		console.log("The Adjective Fire Danger Rating for Arroyo Grande has not yet been updated today.");
     	}
+    	
 	});
-	console.log("updated status for Arroyo Grande");
 }
 
 function getICIndex(ic) {
