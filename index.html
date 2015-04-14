@@ -14,22 +14,29 @@
   <body onload="init()">
       <h1>Today's Fire Danger</h1>
       <div id="threestations" style="clear:both; width: 100%;">
-
         <div id="div_lt" class="onethird">
           <h2>Las Tablas</h2>
           <img id="smokeyLT" class="smokey" src="./img/low.png"/>
         </div>
-
         <div id="div_lp" class="onethird">
           <h2>La Panza</h2>
           <img id="smokeyLP" class="smokey" src="./img/low.png"/>
         </div>
-
         <div id="div_ag" class="onethird">
           <h2>Arroyo Grande</h2>
           <img id="smokeyAG" class="smokey" src="./img/low.png"/>
         </div>
 
+      </div>
+      
+      <div class="spacer" style="width:100%; height:300px;">
+      </div>
+
+      <div style="clear:both; text-align:center; display:block; width:100%;">
+      <br /><br />
+         This site pulls data from the National Wildfire Coordinating Group for stations at Las Tablas, La Panza, and Arroyo Grande and calculates the Adjective Fire Danger Rating from the Ignition Component and Staffing Levels of those stations.
+         <br /><br />
+         Smokey points to the Adjective Fire Danger Rating calculated for each station.
       </div>
       <!--div id="content">
           <button id="low" onclick="low()">Low</button>
