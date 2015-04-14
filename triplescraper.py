@@ -18,16 +18,16 @@ todaysdate = today.strftime('%d') + today.strftime('%b').upper() + today.strftim
 #arroyogrande = "44915"
 
 url_lt = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&start=" + todaysdate + "&end=" + todaysdate + "&user=4e1"
-print "Getting Las Tablas data..." 
+print "Getting Las Tablas data from %s" %url_lt 
 soup_lt = BeautifulSoup(urlopen(url_lt))
 
 url_lp = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44905&start=" + todaysdate + "&end=" + todaysdate + "&user=4e1"
-print "Getting La Panza data..." 
+print "Getting La Panza data from %s" %url_lp 
 soup_lp = BeautifulSoup(urlopen(url_lp))
 
 url_ag = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44915&start=" + todaysdate + "&end=" + todaysdate + "&user=4e1"
-print "Getting Arroyo Grande data..." 
-soup_ag = BeautifulSoup(urlopen(url_ag))
+print "Getting Arroyo Grande data from %s" %url_ag 
+soup_ag = BeautifulSoup(urlopen(url_ag)) 
 
 # Remove unnecessary html tags to get clean xml
 invalid_tags = ['html', 'body']
