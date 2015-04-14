@@ -116,7 +116,7 @@
 <sta_nm>ARROYO GRANDE</sta_nm>
 <nfdr_dt>041415</nfdr_dt>
 <nfdr_tm>12</nfdr_tm>
-<nfdr_type>R</nfdr_type>
+<nfdr_type>O</nfdr_type>
 <mp>1</mp>
 <msgc>7G2A2</msgc>
 <one_hr>3</one_hr>
@@ -124,17 +124,17 @@
 <hu_hr>12</hu_hr>
 <th_hr>12</th_hr>
 <xh_hr>9</xh_hr>
-<ic>49</ic>
+<ic>59</ic>
 <kbdi>432</kbdi>
-<sc>15</sc>
-<ec>57</ec>
-<bi>66</bi>
+<sc>16</sc>
+<ec>58</ec>
+<bi>69</bi>
 <sl>5 </sl>
 <lr>0</lr>
 <lo>0</lo>
 <hr/>0
       <ho>0</ho>
-<fl>47</fl>
+<fl>49</fl>
 <hrb>3</hrb>
 <wdy>89</wdy>
 <adj>V </adj>

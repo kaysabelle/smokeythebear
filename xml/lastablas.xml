@@ -116,7 +116,7 @@
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041415</nfdr_dt>
 <nfdr_tm>13</nfdr_tm>
-<nfdr_type>R</nfdr_type>
+<nfdr_type>O</nfdr_type>
 <mp>1</mp>
 <msgc>7G3A2</msgc>
 <one_hr>3</one_hr>
@@ -124,7 +124,7 @@
 <hu_hr>15</hu_hr>
 <th_hr>16</th_hr>
 <xh_hr>15</xh_hr>
-<ic>36</ic>
+<ic>39</ic>
 <kbdi>116</kbdi>
 <sc>7</sc>
 <ec>38</ec>
@@ -256,7 +256,7 @@
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041415</nfdr_dt>
 <nfdr_tm>13</nfdr_tm>
-<nfdr_type>R</nfdr_type>
+<nfdr_type>O</nfdr_type>
 <mp>2</mp>
 <msgc>7A3A2</msgc>
 <one_hr>3</one_hr>
@@ -264,17 +264,17 @@
 <hu_hr>15</hu_hr>
 <th_hr>16</th_hr>
 <xh_hr>15</xh_hr>
-<ic>19</ic>
+<ic>21</ic>
 <kbdi>116</kbdi>
-<sc>21</sc>
+<sc>22</sc>
 <ec>1</ec>
-<bi>13</bi>
+<bi>14</bi>
 <sl>1 </sl>
 <lr>0</lr>
 <lo>0</lo>
 <hr/>0
       <ho>0</ho>
-<fl>9</fl>
+<fl>10</fl>
 <hrb>106</hrb>
 <wdy>128</wdy>
 <adj>L </adj>
@@ -396,7 +396,7 @@
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041415</nfdr_dt>
 <nfdr_tm>13</nfdr_tm>
-<nfdr_type>R</nfdr_type>
+<nfdr_type>O</nfdr_type>
 <mp>3</mp>
 <msgc>7B3A2</msgc>
 <one_hr>3</one_hr>
@@ -404,17 +404,17 @@
 <hu_hr>15</hu_hr>
 <th_hr>16</th_hr>
 <xh_hr>15</xh_hr>
-<ic>25</ic>
+<ic>27</ic>
 <kbdi>116</kbdi>
 <sc>7</sc>
-<ec>41</ec>
-<bi>39</bi>
+<ec>43</ec>
+<bi>41</bi>
 <sl>1 </sl>
 <lr>0</lr>
 <lo>0</lo>
 <hr/>0
       <ho>0</ho>
-<fl>28</fl>
+<fl>29</fl>
 <hrb>106</hrb>
 <wdy>128</wdy>
 <adj>L </adj>
