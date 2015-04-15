@@ -1,6 +1,6 @@
 echo getting new data...
 python triplescraper.py
-mv *.xml xml
+mv -f *.xml xml
 
 echo committing...
 git add -A
