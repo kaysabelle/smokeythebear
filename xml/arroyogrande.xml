@@ -27,4 +27,32 @@
 <wdy>88</wdy>
 <adj>E </adj>
 </row>
+<row num="2">
+<sta_id>44915</sta_id>
+<sta_nm>ARROYO GRANDE</sta_nm>
+<nfdr_dt>041515</nfdr_dt>
+<nfdr_tm>0</nfdr_tm>
+<nfdr_type>N</nfdr_type>
+<mp>1</mp>
+<msgc>7G2A2</msgc>
+<one_hr>7</one_hr>
+<ten_hr>10</ten_hr>
+<hu_hr>12</hu_hr>
+<th_hr>12</th_hr>
+<xh_hr>9</xh_hr>
+<ic>13</ic>
+<kbdi>446</kbdi>
+<sc>6</sc>
+<ec>52</ec>
+<bi>43</bi>
+<sl>4 </sl>
+<lr>0</lr>
+<lo>0</lo>
+<hr/>0
+      <ho>0</ho>
+<fl>30</fl>
+<hrb>7</hrb>
+<wdy>89</wdy>
+<adj>M </adj>
+</row>
 </nfdrs>
