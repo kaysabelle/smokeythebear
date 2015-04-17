@@ -59,6 +59,34 @@
 <sta_id>44904</sta_id>
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041715</nfdr_dt>
+<nfdr_tm>7</nfdr_tm>
+<nfdr_type>N</nfdr_type>
+<mp>1</mp>
+<msgc>7G3A2</msgc>
+<one_hr>23</one_hr>
+<ten_hr>13</ten_hr>
+<hu_hr>13</hu_hr>
+<th_hr>16</th_hr>
+<xh_hr>15</xh_hr>
+<ic>0</ic>
+<kbdi>123</kbdi>
+<sc>2</sc>
+<ec>27</ec>
+<bi>18</bi>
+<sl>1 </sl>
+<lr>0</lr>
+<lo>0</lo>
+<hr/>0
+      <ho>0</ho>
+<fl>13</fl>
+<hrb>104</hrb>
+<wdy>125</wdy>
+<adj>L </adj>
+</row>
+<row num="4">
+<sta_id>44904</sta_id>
+<sta_nm>LAS TABLAS</sta_nm>
+<nfdr_dt>041715</nfdr_dt>
 <nfdr_tm>13</nfdr_tm>
 <nfdr_type>F</nfdr_type>
 <mp>2</mp>
@@ -83,7 +111,7 @@
 <wdy>123</wdy>
 <adj>L </adj>
 </row>
-<row num="4">
+<row num="5">
 <sta_id>44904</sta_id>
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041715</nfdr_dt>
@@ -111,7 +139,35 @@
 <wdy>125</wdy>
 <adj>L </adj>
 </row>
-<row num="5">
+<row num="6">
+<sta_id>44904</sta_id>
+<sta_nm>LAS TABLAS</sta_nm>
+<nfdr_dt>041715</nfdr_dt>
+<nfdr_tm>7</nfdr_tm>
+<nfdr_type>N</nfdr_type>
+<mp>2</mp>
+<msgc>7A3A2</msgc>
+<one_hr>23</one_hr>
+<ten_hr>13</ten_hr>
+<hu_hr>13</hu_hr>
+<th_hr>16</th_hr>
+<xh_hr>15</xh_hr>
+<ic>0</ic>
+<kbdi>123</kbdi>
+<sc>0</sc>
+<ec>0</ec>
+<bi>0</bi>
+<sl>1 </sl>
+<lr>0</lr>
+<lo>0</lo>
+<hr/>0
+      <ho>0</ho>
+<fl>0</fl>
+<hrb>104</hrb>
+<wdy>125</wdy>
+<adj>L </adj>
+</row>
+<row num="7">
 <sta_id>44904</sta_id>
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041715</nfdr_dt>
@@ -139,7 +195,7 @@
 <wdy>123</wdy>
 <adj>H </adj>
 </row>
-<row num="6">
+<row num="8">
 <sta_id>44904</sta_id>
 <sta_nm>LAS TABLAS</sta_nm>
 <nfdr_dt>041715</nfdr_dt>
@@ -156,6 +212,34 @@
 <kbdi>123</kbdi>
 <sc>0</sc>
 <ec>4</ec>
+<bi>0</bi>
+<sl>1 </sl>
+<lr>0</lr>
+<lo>0</lo>
+<hr/>0
+      <ho>0</ho>
+<fl>0</fl>
+<hrb>104</hrb>
+<wdy>125</wdy>
+<adj>L </adj>
+</row>
+<row num="9">
+<sta_id>44904</sta_id>
+<sta_nm>LAS TABLAS</sta_nm>
+<nfdr_dt>041715</nfdr_dt>
+<nfdr_tm>7</nfdr_tm>
+<nfdr_type>N</nfdr_type>
+<mp>3</mp>
+<msgc>7B3A2</msgc>
+<one_hr>23</one_hr>
+<ten_hr>13</ten_hr>
+<hu_hr>13</hu_hr>
+<th_hr>16</th_hr>
+<xh_hr>15</xh_hr>
+<ic>0</ic>
+<kbdi>123</kbdi>
+<sc>0</sc>
+<ec>0</ec>
 <bi>0</bi>
 <sl>1 </sl>
 <lr>0</lr>
