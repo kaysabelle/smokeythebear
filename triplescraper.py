@@ -18,7 +18,7 @@ yesterday = datetime.date.today() - datetime.timedelta(days=1)
 yesterdaysdate = yesterday.strftime('%d') + yesterday.strftime('%b').upper() + yesterday.strftime('%y')
 
 #lapanza = "44905"
-#lastablas = "44904"
+#lastablas = "44914"
 #arroyogrande = "44915"
 
 url_lt = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&start=" + yesterdaysdate + "&end=" + todaysdate + "&user=4e1"

@@ -82,24 +82,6 @@ function xmlToJson(xml) {
 	return obj;
 };
 
-/*function getTodaysDate() {
-	var today = new Date();
-
-	// get the 2-character date
-	var today_day = today.getDate();
-	if (today_day < 10) {
-		today_day = '0' + today_day;
-	}
-
-	// get the 3-character month
-	var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-	var today_month = months[today.getMonth()];
-
-	var today_year = today.getFullYear().toString().substring(2, 4);
-
-	return today_day + "-" + today_month + "-" + today_year;
-}*/
-
 function getstatus_lapanza() { //44905
 	jQuery.get('./xml/lapanza.xml', function(data) {
     	var jsonified = xmlToJson(data);
@@ -113,9 +95,14 @@ function getstatus_lapanza() { //44905
 	    			break;
 	    		}
 	    	}
+	    	if (i == jsonified.nfdrs.row.length) {
+    			console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
+    			$('#ltstatus').html("*This station's rating is not up to date");
+    		}
     	}    	
     	else {
     		console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
+    		$('#ltstatus').html("*This station's rating is not up to date");
     	}
 	});
 }
@@ -134,9 +121,14 @@ function getstatus_lastablas() { //44904
 	    			break;
 	    		}
 	    	}
+	    	if (i == jsonified.nfdrs.row.length) {
+    			console.log("The Adjective Fire Danger Rating for Las Tablas has not yet been updated today.");
+    			$('#ltstatus').html("*This station's rating is not up to date");
+    		}
     	}
     	else {
     		console.log("The Adjective Fire Danger Rating for Las Tablas has not yet been updated today.");
+    		$('#ltstatus').html("*This station's rating is not up to date");
     	}
 	});
 }
@@ -155,9 +147,14 @@ function getstatus_arroyogrande() { //44915
 	    			break;
 	    		}
 	    	}
+	    	if (i == jsonified.nfdrs.row.length) {
+    			console.log("The Adjective Fire Danger Rating for Arroyo Grande has not yet been updated today.");
+    			$('#agstatus').html("*This station's rating is not up to date");
+    		}
     	}
     	else {
     		console.log("The Adjective Fire Danger Rating for Arroyo Grande has not yet been updated today.");
+    		$('#ltstatus').html("*This station's rating is not up to date");
     	}
     	
 	});
