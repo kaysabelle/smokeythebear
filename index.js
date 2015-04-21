@@ -103,7 +103,7 @@ function xmlToJson(xml) {
 function getstatus_lapanza() { //44905
 	jQuery.get('./xml/lapanza.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	console.log("GOT JSON!");
+    	console.log("GOT JSON! FOR LA PANZA");
     	if (jsonified.hasOwnProperty('nfdrs') && jsonified.nfdrs.hasOwnProperty('row')) {
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
 	    		var curEntry = jsonified.nfdrs.row[i];
@@ -113,9 +113,6 @@ function getstatus_lapanza() { //44905
 	    			break;
 	    		}
 	    	}
-	    	if (i == jsonified.nfdrs.row.length) {
-	    		console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
-    		}
     	}    	
     	else {
     		console.log("The Adjective Fire Danger Rating for La Panza has not yet been updated today.");
@@ -126,7 +123,7 @@ function getstatus_lapanza() { //44905
 function getstatus_lastablas() { //44904
 	jQuery.get('./xml/lastablas.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	console.log("GOT JSON!");
+    	console.log("GOT JSON! FOR LAS TABLAS");
     	if (jsonified.hasOwnProperty('nfdrs') && jsonified.nfdrs.hasOwnProperty('row')) {
     		console.log("row exists");
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
@@ -136,9 +133,6 @@ function getstatus_lastablas() { //44904
 	    			console.log("Smokey's Adjective Fire Danger Rating for Las Tablas is up to date.");
 	    			break;
 	    		}
-	    	}
-	    	if (i == jsonified.nfdrs.row.length) {
-	    		console.log("The Adjective Fire Danger Rating for Las Tablas has not yet been updated today.");
 	    	}
     	}
     	else {
@@ -150,7 +144,7 @@ function getstatus_lastablas() { //44904
 function getstatus_arroyogrande() { //44915
 	jQuery.get('./xml/arroyogrande.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	console.log("GOT JSON!");
+    	console.log("GOT JSON! FOR ARROYO GRANDE");
     	if (jsonified.hasOwnProperty('nfdrs') && jsonified.nfdrs.hasOwnProperty('row')) {
     		console.log("row exists");
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
@@ -160,9 +154,6 @@ function getstatus_arroyogrande() { //44915
 	    			console.log("Smokey's Adjective Fire Danger Rating for Arroyo Grande is up to date.");
 	    			break;
 	    		}
-	    	}
-	    	if (i == jsonified.nfdrs.row.length) {
-	    		console.log("The Adjective Fire Danger Rating for Arroyo Grande has not yet been updated today.");
 	    	}
     	}
     	else {
