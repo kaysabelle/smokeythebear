@@ -18,14 +18,14 @@ yesterday = datetime.date.today() - datetime.timedelta(days=1)
 yesterdaysdate = yesterday.strftime('%d') + yesterday.strftime('%b').upper() + yesterday.strftime('%y')
 
 #lapanza = "44905"
-#lastablas = "44904"
+#lastablas = "44914"
 #arroyogrande = "44915"
 
 url_lt = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&start=" + yesterdaysdate + "&end=" + todaysdate + "&user=4e1"
 print "Getting Las Tablas data from %s" %url_lt 
 soup_lt = BeautifulSoup(urlopen(url_lt))
 
-url_lp = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44905&start=" + yesterdaysdate + "&end=" + todaysdate + "&user=4e1"
+url_lp = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44914&start=" + yesterdaysdate + "&end=" + todaysdate + "&user=4e1"
 print "Getting La Panza data from %s" %url_lp 
 soup_lp = BeautifulSoup(urlopen(url_lp))
 
