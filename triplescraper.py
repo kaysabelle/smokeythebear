@@ -25,7 +25,7 @@ url_lt = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44904&start=" + yesterda
 print "Getting Las Tablas data from %s" %url_lt 
 soup_lt = BeautifulSoup(urlopen(url_lt))
 
-url_lp = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44905&start=" + yesterdaysdate + "&end=" + todaysdate + "&user=4e1"
+url_lp = "https://fam.nwcg.gov/wims/xsql/nfdrs.xsql?stn=44914&start=" + yesterdaysdate + "&end=" + todaysdate + "&user=4e1"
 print "Getting La Panza data from %s" %url_lp 
 soup_lp = BeautifulSoup(urlopen(url_lp))
 
