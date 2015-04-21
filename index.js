@@ -192,7 +192,7 @@ function calc_rating(sl, ic, id) {
 	var ic_result = getICIndex(ic);
 	var rating_result = rating_matrix[sl-1][ic_result];
 
-	console.log("RATING BELOW:");
+	console.log("RATING BELOW for " + id + " based on sl=" + sl + " and ic=" + ic + ": ");
 	console.log(rating_result);
 
 	switch(rating_result) {
