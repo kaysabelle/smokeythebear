@@ -103,7 +103,8 @@ function xmlToJson(xml) {
 function getstatus_lapanza() { //44905
 	jQuery.get('./xml/lapanza.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	if ("nfdrs.row" in jsonified) {
+    	console.log("GOT JSON!");
+    	if (jsonified.hasOwnProperty('nfdrs') && jsonified.nfdrs.hasOwnProperty('row')) {
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
 	    		var curEntry = jsonified.nfdrs.row[i];
 	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
@@ -125,7 +126,9 @@ function getstatus_lapanza() { //44905
 function getstatus_lastablas() { //44904
 	jQuery.get('./xml/lastablas.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	if ("nfdrs.row" in jsonified) {
+    	console.log("GOT JSON!");
+    	if (jsonified.hasOwnProperty('nfdrs') && jsonified.nfdrs.hasOwnProperty('row')) {
+    		console.log("row exists");
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
 	    		var curEntry = jsonified.nfdrs.row[i];
 	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
@@ -147,7 +150,9 @@ function getstatus_lastablas() { //44904
 function getstatus_arroyogrande() { //44915
 	jQuery.get('./xml/arroyogrande.xml', function(data) {
     	var jsonified = xmlToJson(data);
-    	if ("nfdrs.row" in jsonified) {
+    	console.log("GOT JSON!");
+    	if (jsonified.hasOwnProperty('nfdrs') && jsonified.nfdrs.hasOwnProperty('row')) {
+    		console.log("row exists");
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
 	    		var curEntry = jsonified.nfdrs.row[i];
 	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
