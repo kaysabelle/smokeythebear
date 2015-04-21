@@ -14,7 +14,7 @@ today = datetime.date.today()
 todaysdate = today.strftime('%d') + today.strftime('%b').upper() + today.strftime('%y')
 
 # Get the report for yesterday's date as well
-yesterday = datetime.date.today() - timedelta(days=1)
+yesterday = datetime.date.today() - datetime.timedelta(days=1)
 yesterdaysdate = yesterday.strftime('%d') + yesterday.strftime('%b').upper() + yesterday.strftime('%y')
 
 #lapanza = "44905"
