@@ -2,7 +2,7 @@
 Python script that scraps the adjective fire danger information
 """
 from bs4 import BeautifulSoup, NavigableString
-import datetime, timedelta
+import datetime
 
 try:
     from urllib2 import urlopen
