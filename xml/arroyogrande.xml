@@ -143,6 +143,34 @@
 <sta_id>44915</sta_id>
 <sta_nm>ARROYO GRANDE</sta_nm>
 <nfdr_dt>042115</nfdr_dt>
+<nfdr_tm>18</nfdr_tm>
+<nfdr_type>N</nfdr_type>
+<mp>1</mp>
+<msgc>7G2A2</msgc>
+<one_hr>16</one_hr>
+<ten_hr>15</ten_hr>
+<hu_hr>12</hu_hr>
+<th_hr>11</th_hr>
+<xh_hr>8</xh_hr>
+<ic>0</ic>
+<kbdi>462</kbdi>
+<sc>3</sc>
+<ec>45</ec>
+<bi>31</bi>
+<sl>1 </sl>
+<lr>0</lr>
+<lo>0</lo>
+<hr/>0
+      <ho>0</ho>
+<fl>22</fl>
+<hrb>16</hrb>
+<wdy>83</wdy>
+<adj>L </adj>
+</row>
+<row num="7">
+<sta_id>44915</sta_id>
+<sta_nm>ARROYO GRANDE</sta_nm>
+<nfdr_dt>042115</nfdr_dt>
 <nfdr_tm>12</nfdr_tm>
 <nfdr_type>O</nfdr_type>
 <mp>1</mp>
@@ -167,7 +195,7 @@
 <wdy>83</wdy>
 <adj>M </adj>
 </row>
-<row num="7">
+<row num="8">
 <sta_id>44915</sta_id>
 <sta_nm>ARROYO GRANDE</sta_nm>
 <nfdr_dt>042115</nfdr_dt>
