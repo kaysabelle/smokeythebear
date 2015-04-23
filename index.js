@@ -141,7 +141,7 @@ function getstatus_arroyogrande() { //44915
     		console.log("row exists");
     		for (var i=0; i<jsonified.nfdrs.row.length; i++) {
 	    		var curEntry = jsonified.nfdrs.row[i];
-	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G3A2") {
+	    		if (curEntry.nfdr_type['#text'] == "O" && curEntry.msgc['#text'] == "7G2A2") {
 	    			calc_rating(curEntry.sl['#text'], curEntry.ic['#text'], 'AG');
 	    			console.log("Smokey's Adjective Fire Danger Rating for Arroyo Grande is up to date.");
 	    			break;

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Smokey the Bear Fire Danger</title>
+    <title>Adjective Fire Danger</title>
     <meta name="description" content="Current fire danger for SLO County">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/index.css">
@@ -12,7 +12,7 @@
   </head>
   
   <body onload="init()">
-      <h1>Today's Fire Danger</h1>
+      <h1>Adjective Fire Danger</h1>
       <div id="threestations" style="clear:both; width: 100%;">
         <div id="div_lt" class="onethird">
           <h2>Las Tablas</h2>
@@ -32,14 +32,38 @@
 
       </div>
       
-      <div class="spacer" style="width:100%; height:300px;">
-      </div>
+      <!--div class="spacer" style="width:100%; height:300px;">
+      </div-->
 
       <div style="clear:both; text-align:center; display:block; width:100%;">
       <br /><br />
-         This site pulls data from the National Wildfire Coordinating Group for stations at Las Tablas, La Panza, and Arroyo Grande and calculates the Adjective Fire Danger Rating from the Ignition Component and Staffing Levels of those stations.
+         This site pulls data from the WIMS Data Exchange Facility for stations at Las Tablas, La Panza, and Arroyo Grande and calculates the Adjective Fire Danger Rating from the Ignition Component and Staffing Levels of those stations.
          <br /><br />
          Smokey points to the Adjective Fire Danger Rating calculated for each station.
+         <br /><br />
+      </div>
+      <div style="clear:both; text-align:left; display:block; width:100%;">
+         <small>In March 1974, Forest Service, BLM, and State Forestry representatives established a standard fire-danger rating system designed to communicate the relative severity of the current fire danger situation to the public.
+         <br>
+         <br>The “adjective fire danger” is analogous to “Smokey’s arm” or other media used to convey fire danger to the public. The “adjective fire danger” is based on a combination of the staffing level, which can be driven by any NFDRS output; and the ignition component (the probability that a firebrand would cause a wildland fire requiring some form of suppression response). Typically, the “adjective fire danger” is in the “moderate” and “high” ranges about 70 percent of the time during the fire season. “Low” occurs about 25 percent of the time, with the remainder of the days in the “very high” or “extreme” range.
+         <br>
+         <br>This adjective class should only be utilized for public information. Staffing level (SL) is used for in-house fire readiness.
+         <br>
+         <br>Using the IC, the SL, and the adjective fire-danger matrix, WIMS determines the fire-danger rating (R). Adjective fire-danger is expressed as one of five levels
+         <br>
+         <br>• Low (L) or Green
+         <br>• Moderate (M) or Blue
+         <br>• High (H) or Yellow
+         <br>• Very High (VH) or Orange
+         <br>• Extreme (E) or Red
+         <br>
+         <br>The table below shows the adjective fire-danger matrix. The NFDRS output used for the Staffing Index is a management decision. The Staffing Level is based on that Staffing Index. The other half of the matrix is always the Ignition Component(IC).</small>
+         <br>
+         <img src="https://dl.dropboxusercontent.com/u/345322813/images/AFDR-matrix.png">
+         <br>
+      </div>
+      <div style="clear:both; text-align:center; display:block; width:100%;">
+         Source and for more information, please refer to pages 10-11 here: <a href="https://fam.nwcg.gov/fam-web/pocketcards/wims_ug_final/Appx_E_NFDRS_Technical_Reference.pdf">Appendix E NFDRS Technical Reference</a> [pdf]
       </div>
       <!--div id="content">
           <button id="low" onclick="low()">Low</button>
